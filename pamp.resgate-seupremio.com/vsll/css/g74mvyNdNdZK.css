@@ -1,0 +1,517 @@
+/* style.css */
+
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,600&amp;display=swap');
+
+:root {
+  --primary: #14b8a6;
+  --primary-dark: #0f7a70;    /* tom mais escuro para sobrepor */
+  --secondary-bg: #F7F7F7;
+  --text-color: #333;
+}
+
+/* Reset & Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: var(--secondary-bg);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* ===== Navbar Pampers ===== */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+  background: var(--primary);
+  padding: 0 1rem;
+}
+
+/* Garante que a logo nunca ultrapasse a altura da navbar */
+.brand .logo {
+  max-height: 100%; /* vai até 56px, que é a altura da navbar */
+  width: auto;      /* largura proporcional */
+  display: inline-block;
+}
+
+/* força a logo a ficar do tamanho da navbar */
+.navbar .brand img {
+  max-height: 50px;  /* igual à altura da navbar */
+  width: auto;       /* proporcional */
+  object-fit: contain;
+  display: inline-block;
+}
+
+
+.nav-left,
+.nav-center,
+.nav-right {
+  position: static;
+}
+
+.nav-center {
+  flex: 1;
+  text-align: center;
+}
+
+.brand {
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: #fff;
+}
+
+.tm {
+  font-size: 0.7rem;
+  vertical-align: super;
+  color: #FFD100;
+}
+
+/* ===== Buscador na Navbar ===== */
+.search-container {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 24px;
+  overflow: hidden;
+  height: 36px;
+}
+
+.search-container input {
+  border: none;
+  outline: none;
+  padding: 0 1rem;
+  font-size: 0.95rem;
+  width: 200px;
+}
+
+.search-container button {
+  border: none;
+  background: none;
+  padding: 0 0.75rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: var(--primary);
+  font-size: 1.2rem;
+}
+
+/* remove nav.subnav de visualização */
+nav.subnav {
+  display: none !important;
+}
+
+/* ===== Quiz Promo Style ===== */
+.quiz-container {
+  max-width: 600px;
+  margin: 1rem auto;
+  background: var(--primary-dark);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.quiz-header {
+  padding: 1rem;
+  text-align: center;
+}
+
+#questionCounter {
+  color: #fff;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.progress-bar {
+  width: 90%;
+  height: 6px;
+  background: rgba(255,255,255,0.3);
+  margin: 0 auto;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress {
+  width: 0%;
+  height: 100%;
+  background: #FFD100;
+  transition: width 0.3s;
+}
+
+.quiz-card {
+  background: transparent;
+  padding: 0 1rem 2rem;
+  text-align: center;
+}
+
+#questionImage {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+#questionText {
+  color: #fff;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+}
+
+/* opções em blocos amarelos (toda a largura) */
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.options .option {
+  background: #FFD100;
+  color: #333;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  text-align: left;
+}
+
+.options .option:hover {
+  background: #ffe266;
+}
+
+/* esconde os radios nativos */
+.options .option input[type="radio"] {
+  display: none;
+}
+
+/* botão Próxima/Finalizar */
+.btn {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  display: block;
+  background: #FFD100;
+  color: #333;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Rating (apenas primeira pergunta) */
+.rating {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.rating i {
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.rating i.fas {
+  color: #FFD100;
+}
+
+.rating-labels {
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  font-size: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ===== Footer Pampers ===== */
+footer {
+  background: var(--primary);
+  color: #fff;
+  padding: 2rem 1rem;
+}
+
+.footer-sections {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer-section {
+  flex: 1 1 200px;
+}
+
+.footer-section h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+  opacity: 0.8;
+}
+
+footer .social-icons {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+footer .newsletter {
+  display: flex;
+  max-width: 400px;
+  margin-bottom: 1.5rem;
+}
+
+footer .newsletter input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 20px 0 0 20px;
+}
+
+footer .newsletter button {
+  background: #fff;
+  border: none;
+  padding: 0 1rem;
+  border-radius: 0 20px 20px 0;
+}
+
+.footer-legal {
+  max-width: 400px;
+  margin: 2rem auto 0;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.3);
+  text-align: center;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.footer-legal p {
+  margin-bottom: 0.5rem;
+}
+
+/* ===== Result Screen ===== */
+.result-screen {
+  max-width: 600px;
+  margin: 2rem auto;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.result-header {
+  background: var(--primary);
+  color: #fff;
+  padding: 2rem 1rem;
+
+  /* centro apenas o texto e o ícone */
+  text-align: center;
+}
+.result-header i {
+  display: block;        /* faz o ícone ficar numa “linha” própria */
+  margin: 0 auto 1rem;   /* centraliza e dá espaçamento abaixo */
+}
+
+.result-message {
+  padding: 1rem;
+}
+
+.vsl-container {
+  width: 100%;
+  height: 360px;
+  background: #f7f7f7;
+}
+
+.result-summary {
+  padding: 1rem;
+  background: #f7f7f7;
+  text-align: left;
+}
+
+.result-summary h3 {
+  margin-bottom: 0.75rem;
+}
+
+.result-summary ul {
+  list-style: none;
+  padding: 0;
+}
+
+.result-summary li {
+  margin-bottom: 0.5rem;
+}
+
+.result-actions {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.result-actions .btn {
+  width: 100%;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+
+/* ===== Tela de Análise ===== */
+.analyzing-screen {
+  width: 100%;
+  background: var(--primary);
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 1.1rem;
+}
+
+/* ===== Tela de Análise Full-Screen ===== */
+.analyzing-screen {
+  position: fixed;
+  top: 56px;                /* logo abaixo da navbar */
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 56px);
+  background: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Caixa interna */
+.analyzing-box {
+  text-align: center;
+  color: #fff;
+  padding: 2rem;
+}
+
+/* Spinner CSS */
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 5px solid rgba(255,255,255,0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Texto */
+.analyzing-box p {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+
+/* ==== NOVA SEÇÃO: TAMANHO PRÉ-SELECIONADO ==== */
+.size-selection {
+  max-width: 600px;
+  margin: 2rem auto;             /* centraliza e adiciona espaçamento */
+}
+
+.size-option {
+  display: block;
+  border: 2px solid var(--primary);
+  border-radius: 50px;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  color: var(--primary);
+  text-align: center;
+  margin-bottom: 0.75rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.size-option.selected {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* ===== Ofuscar opções não selecionadas ===== */
+.size-option:not(.selected) {
+  opacity: 0.3;           /* ajuste esse valor entre 0.2 e 0.3 para variar o grau de ofuscação */
+  transition: opacity .2s; /* suaviza a transição se você quiser animar depois */
+}
+
+/* ===== Ajuste de espaçamento e label para seleção de tamanho ===== */
+.size-selection {
+  max-width: 600px;
+  margin: 2rem auto;    /* centraliza na página */
+  padding: 0 1rem;      /* cria espaço nas laterais */
+}
+
+.size-selection-label {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 0.75rem;
+}
+
+/* ===== Botão igual à largura das opções ===== */
+.result-actions {
+  /* só garantir padding lateral igual ao .size-selection */
+  padding: 1rem 1rem;
+}
+
+.result-actions .btn {
+  /* enche 100% do container, mas não ultrapassa o que o .result-screen já limita */
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;  /* centraliza horizontalmente */
+}
+
+/* Garante que os ícones sociais no footer sejam brancos */
+footer .social-icons a,
+footer .social-icons i {
+  color: #fff !important;
+}
+
+/* ===========================
+   Botão “Resgatar Agora” como <a>
+   =========================== */
+.result-actions {
+  /* garante que elementos inline/inline-block fiquem centralizados */
+  text-align: center;
+}
+
+.result-actions .btn {
+  /* centraliza o botão se ele for inline-block */
+  display: inline-block;
+  margin: 0 auto;
+  /* remove o sublinhado padrão do <a> */
+  text-decoration: none;
+  /* centraliza o conteúdo (ícone + texto) dentro do botão */
+  text-align: center;
+}
